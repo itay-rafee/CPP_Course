@@ -1,0 +1,4 @@
+1 r_school = 25 r_class
+1 r_class = 25 r_student
+1 r_EUR = 4 r_ILS
+1 r_halfMin = 0.5 r_min

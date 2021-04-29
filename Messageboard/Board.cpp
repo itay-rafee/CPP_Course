@@ -69,7 +69,7 @@ namespace ariel
         }
     }
 
-    void Board::set_s(unsigned int row, unsigned int col, Direction n, string &s, unsigned int len_s)
+    void Board::add_message(unsigned int row, unsigned int col, Direction n, string &s, unsigned int len_s)
     {
         if (n == Direction::Horizontal)
         {
@@ -81,7 +81,7 @@ namespace ariel
         }
     }
 
-    bool Board::contain(unsigned int row, unsigned int col)
+    bool Board::contain_message(unsigned int row, unsigned int col)
     {
         bool ans = false;
         it1 = board.find(row);
@@ -101,7 +101,7 @@ namespace ariel
         string ans;
         for (size_t i = 0; i < len; i++)
         {
-            if (contain(row, col))
+            if (contain_message(row, col))
             {
                 ans += board[row][col];
             }
@@ -119,7 +119,7 @@ namespace ariel
         string ans;
         for (size_t i = 0; i < len; i++)
         {
-            if (contain(row, col))
+            if (contain_message(row, col))
             {
                 ans += board[row][col];
             }
@@ -132,7 +132,7 @@ namespace ariel
         return ans;
     }
 
-    unsigned int Board::set_space(unsigned int a)
+    unsigned int Board::add_space(unsigned int a)
     {
         unsigned int i = 1;
         while (a / pow(ten, i) >= one)
@@ -146,7 +146,7 @@ namespace ariel
     {
         unsigned int len_s = s.size();
         set_min_max(row, col, n, len_s);
-        set_s(row, col, n, s, len_s);
+        add_message(row, col, n, s, len_s);
     }
 
     string Board::read(unsigned int row, unsigned int col, Direction n, unsigned int len)
@@ -178,7 +178,7 @@ namespace ariel
         string ans;
         for (unsigned int i = min_r; i < max_r; ++i)
         {
-            unsigned int space = set_space(i);
+            unsigned int space = add_space(i);
             ans += to_string(i) + ":";
             for (unsigned int j = space; j < five; ++j)
             {
@@ -186,7 +186,7 @@ namespace ariel
             }
             for (unsigned int j = min_c; j < max_c; ++j)
             {
-                if (contain(i, j))
+                if (contain_message(i, j))
                 {
                     ans += board[i][j];
                 }

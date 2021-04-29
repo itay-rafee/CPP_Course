@@ -18,11 +18,11 @@ namespace ariel
         void set_s_h(unsigned int row, unsigned int col, std::string s,unsigned int len_s);
         void set_min_max(unsigned int row, unsigned int col, ariel::Direction n,unsigned int len_s);
         void set_s_v(unsigned int row, unsigned int col, std::string s,unsigned int len_s);
-        void set_s(unsigned int row, unsigned int col, ariel::Direction n, std::string &s,unsigned int len_s);
-        bool contain(unsigned int row, unsigned int col);
+        void add_message(unsigned int row, unsigned int col, ariel::Direction n, std::string &s,unsigned int len_s);
+        bool contain_message(unsigned int row, unsigned int col);
         std::string read_h(unsigned int row, unsigned int col,unsigned int len);
         std::string read_v(unsigned int row, unsigned int col, unsigned int len);
-        static unsigned int set_space(unsigned int a) ;
+        static unsigned int add_space(unsigned int a) ;
 
     public:
         void post(unsigned int row, unsigned int column, ariel::Direction n, std::string s);

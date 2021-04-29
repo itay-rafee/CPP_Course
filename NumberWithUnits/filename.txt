@@ -1,0 +1,7 @@
+1 r_km = 1000 r_m
+1 r_m = 100 r_cm
+1 r_kg = 1000 r_g
+1 r_ton = 1000 r_kg
+1 r_hour = 60 r_min
+1 r_min = 60 r_sec
+1 r_USD = 3.33 r_ILS
